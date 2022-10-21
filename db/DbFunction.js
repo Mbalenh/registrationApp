@@ -17,8 +17,8 @@ const DbFunction = (db) =>{
         await db.none('Delete FROM registrationNumber')
     }
 
-    const getRegFilter= async()=>{
-      await db.manyOrNone('select * from registrationNumber where town_id= $1')
+    const getRegFilter= async(value)=>{
+     return await db.manyOrNone('select * from registrationNumber where town_id= $1',[value])
 
     }
 return{
