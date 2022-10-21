@@ -1,63 +1,51 @@
-const routes=(dbFunction,registration) =>{
+const routes=(dbFunction) =>{
 	const getIndex= async(req,res)=>{
-
- let name = registration.regnum
- let town = registration.town
-let message= registration.greet(name,town)
-
-  registration.regnum =""
-  registration.town=""
-    res.render('index' ,{
-    message: message,
-     
-})
+  const regNumbers=await dbFunction.getRegNum()
+  res.render('index',{
+regNumbers
+  })
 }
 
-const greeted= async (req,res)=>{
+const insertRegistrations= async (req,res)=>{
 
-   let error = registration.errorMessage(req.body.regnumbers,req.body.town)
-    if (error) {
-       req.flash('info', error)
-    }else{
-      registration.regnum = req.body.regnumbers[0].toUpperCase()+req.body.regnumbers.slice(1).toLowerCase();
-      registration.town = req.body.town
-      // regnum= regnumbers[0].toUpperCase()+regnumbers.slice(1).toLowerCase();
-      await dbFunction.greets(registration.regnum)
-    }
-res.redirect('/');
+   let reg= req.body.regnumbers
+
+console.log(reg)
+if(!/^[A-Z]{2}\s[0-9]{3}(\s|\-)?[0-9]{3}$/.test(reg)){
+req.flash("info","Invalid registration number")
+}else if(reg){
+  await dbFunction.insertRegistration(reg.toUpperCase())
+  req.flash("info","registration number added")
+}else{
+req.flash("info","Please enter registration number")
+
+}
+res.redirect("/")
 
 
 }
-    const clearName=  async (req,res)=>{
-    await dbFunction.clearReg()
+    const clearREGnum=  async (req,res)=>{
+  await dbFunction.clearTownReg()
   res.redirect('/');
     }
   
 
-    const getName = async (req,res)=>{
+    const getfilter = async (req,res)=>{
 
- let names= await dbFunction.getNames()
-  
-   console.log(names)
-res.render('greeted',{
-  names
-})
+ let city = req.body.city
+   const regFilter = await dbFunction.getRegFilter()
+  res.render('index',{
+regFilter
+  })
 }
 
-const getUserCounters=  async (req,res)=>{
- let user = req.params.regnum;
-  let counter= await dbFunction.getUserCounter(user)
-// await dbFunction.getCounter(user)
-  res.render('counter',{user, counter})
 
-
-}
 return{
 	getIndex,
-	greeted,
-	clearName,
-	getName,
-	getUserCounters
+	insertRegistrations,
+	clearREGnum,
+	getfilter
+
 }
 }
 module.exports = routes
