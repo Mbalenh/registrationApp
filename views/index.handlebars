@@ -1,0 +1,69 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+
+<div class="registration">
+    <div>
+         <h1>Registration Number WebApp</h1>
+         <p>Kindly add in the registration Numbers</p>
+
+    </div>
+    
+    <form action="/reg_numbers" class="reg" method="POST">
+        <p>Registration</p>
+        <div class="registrationNu">
+            <input class="name" type="text" name="regnumbers" placeholder=" please enter registration number">
+         
+        </div>
+        <div class="regAdd">
+            <button class="button-primary RegnuAdd" type="submit" name="button">Add</button>
+            <form action="/clear" class="reg" method="POST">
+                <button class="button-primary clear" type="submit" name="button">clear</button>
+            </form>
+              
+        </div>
+
+        <div>
+             <p><span class="display">{{message}} </span></p>
+        <p><span class="error">{{messages.info}}</span></p>
+
+    </div>
+    </form>
+    <div class="msg">
+        <ul class="msg">
+        {{#each regNumbers}}
+        <li class="msg">{{reg_number}}</li>
+        {{/each}}
+        </ul>
+
+    </div>
+    <div>
+        <h1>Please select any town below</h1>
+        <form action="/filter" class="reg" method="POST">
+
+   <div class="town">
+            <input type="radio" name="city" class="radio radioBellvile" value="1"> Bellvile
+            <input type="radio" name="city" class="radio radioCapeTown" value="2"> CapeTown
+            <input type="radio" name="city" class="radio radioStellenbosch" value="3"> Stellenbosch
+            <input type="radio" name="city" class="radio radioPaarl" value="4">Paarl
+        </div>
+        <div class="buttonReg">
+            <button class="button-primary RegnuAdd" type="submit" name="button">Show</button>
+            <p><span class="display">{{message}} </span></p>
+        </div>
+        </form>
+    </div>
+</div>
+
+
+
+</body>
+</html>
