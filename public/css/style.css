@@ -2,6 +2,7 @@
 font-family: Arial,Helvetica, sans-serif;
  box-sizing: border-box;
 
+
  }
 p{
 font-size: 10px;
@@ -62,10 +63,22 @@ background-color: lightpink;
 
  .msg{
 text-align: center;
+}
 
- }
+ul{
+display: flex;
+ text-align: center;
+ align-items: center;
+ justify-content: center;
+}
+
  .msg li{
-text-align: center;
+  display: flex;
+  text-align: center;
+ align-items: center;
+ justify-content: center;
+ margin-left: 5px;
+
 
  }
 
@@ -78,6 +91,14 @@ text-align: center;
     align-items: center;
     text-align: center;
     justify-content: center;
+    background: url(pexels-shivam-maurya-7051330.jpg);
+   max-width: 100%;
+  margin: auto;
+  margin-left: 350px;
+  margin-right: 350px;
+  margin-top: 50px;
+  border-radius: 10px;
+
 
  }
  .clear{

@@ -27,21 +27,12 @@
             <button class="button-primary RegnuAdd" type="submit" name="button">Add</button>       
         </div>
 
-      <!--   <div>
-             <p><span class="display">{{message}} </span></p>
-        <p><span class="error">{{messages.info}}</span></p>
-
-    </div> -->
-    </form>
-      <div class='clear'>
-        <form action="/clear" class="regclear" method="POST">
-                <button class="button-primary clear" type="submit" name="button">clear</button>
-            </form></div>
-              <div>
+        <div>
              <p><span class="display">{{message}} </span></p>
         <p><span class="error">{{messages.info}}</span></p>
 
     </div>
+    </form>
     <div class="msg">
         <ul class="msg">
         {{#each regNumbers}}
@@ -50,6 +41,21 @@
         </ul>
 
     </div>
+
+      <div class='clear'>
+        <form action="/clear" class="regclear" method="POST">
+                <button class="button-primary clear" type="submit" name="button">clear</button>
+            </form></div>
+              <div>
+        
+   <!--  <div class="msg">
+        <ul class="msg">
+        {{#each regNumbers}}
+        <li class="msg">{{reg_number}}</li>
+        {{/each}}
+        </ul>
+
+    </div> -->
     <div>
         <h1>Please select any town below</h1>
         <form action="/filter" class="reg" method="POST">

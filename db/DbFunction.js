@@ -8,7 +8,7 @@ const DbFunction = (db) =>{
     	return await db.manyOrNone('SELECT * FROM Towns ')
    }
    const getRegNum= async()=>{
-    return await db.manyOrNone('SELECT * FROM  registrationNumber')
+    return await db.manyOrNone('SELECT DISTINCT reg_number FROM  registrationNumber')
      
     }  
      
@@ -18,7 +18,7 @@ const DbFunction = (db) =>{
     }
 
     const getRegFilter= async(value)=>{
-     return await db.manyOrNone('select * from registrationNumber where town_id= $1',[value])
+     return await db.manyOrNone('select DISTINCT reg_number from registrationNumber where town_id= $1',[value])
 
     }
 return{

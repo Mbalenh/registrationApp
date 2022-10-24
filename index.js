@@ -45,7 +45,7 @@ req.flash("info","Invalid registration number")
 }else if(reg){
   await dbFunction.insertRegistration(reg.toUpperCase())
   req.flash("info","registration number added")
-}else{
+}else if(!reg){
 req.flash("info","Please enter registration number")
 
 }
