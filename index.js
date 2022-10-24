@@ -29,6 +29,7 @@ app.use(flash());
 
 app.get('/', async function(req,res){
   const regNumbers=await dbFunction.getRegNum()
+  console.log(regNumbers)
   res.render('index',{
 regNumbers
   })
@@ -51,15 +52,18 @@ req.flash("info","Please enter registration number")
 res.redirect("/")
 
 })
+
 app.post('/filter' ,async function(req,res) {
   let city = req.body.city
-   const regFilter = await dbFunction.getRegFilter()
+  console.log(city)
+   const regFilter = await dbFunction.getRegFilter(city)
   res.render('index',{
-regFilter
+regNumbers:regFilter
+
   })
 
 })
-app.get('/clear' ,async function(req,res) {
+app.post('/clear' ,async function(req,res) {
 
   await dbFunction.clearTownReg()
   res.redirect('/');

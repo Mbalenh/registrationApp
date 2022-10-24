@@ -1,12 +1,17 @@
  body{
 font-family: Arial,Helvetica, sans-serif;
  box-sizing: border-box;
+
  }
-
-
- h1,p{
-
+p{
+font-size: 10px;
 text-align: center;
+}
+
+ h1{
+font-size: 20px;
+text-align: center;
+margin-top: 40px;
 
  }
  .buttonReg{
@@ -29,6 +34,11 @@ width: 25%;
 .registrationNu{
   text-align: center;
 }
+.clear{
+text-align: center;
+}
+
+
  button{
 padding: 0.75em;
 background-color: lightpink;
@@ -65,9 +75,32 @@ text-align: center;
     align-items: center;
  }
  .registration{
-background-image: url('/pexels-shivam-maurya-7051330.jpg');
+    align-items: center;
+    text-align: center;
+    justify-content: center;
 
  }
  .clear{
     margin-left: 5px;
 }
+
+.clear button{
+padding: 0.75em;
+background-color: lightpink;
+color: black;
+border-radius: 0.25em;
+  font-size: 10px;
+    font-weight: bold;
+    margin: 20px 0;
+    width: 10%;
+    border: 0;
+   /* border: black;*/
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+ }
+ .clear button:hover{
+cursor: pointer;
+background-color: lightpink;
+ }

@@ -24,19 +24,24 @@
          
         </div>
         <div class="regAdd">
-            <button class="button-primary RegnuAdd" type="submit" name="button">Add</button>
-            <form action="/clear" class="regclear" method="POST">
-                <button class="button-primary clear" type="submit" name="button">clear</button>
-            </form>
-              
+            <button class="button-primary RegnuAdd" type="submit" name="button">Add</button>       
         </div>
 
-        <div>
+      <!--   <div>
+             <p><span class="display">{{message}} </span></p>
+        <p><span class="error">{{messages.info}}</span></p>
+
+    </div> -->
+    </form>
+      <div class='clear'>
+        <form action="/clear" class="regclear" method="POST">
+                <button class="button-primary clear" type="submit" name="button">clear</button>
+            </form></div>
+              <div>
              <p><span class="display">{{message}} </span></p>
         <p><span class="error">{{messages.info}}</span></p>
 
     </div>
-    </form>
     <div class="msg">
         <ul class="msg">
         {{#each regNumbers}}
@@ -50,7 +55,7 @@
         <form action="/filter" class="reg" method="POST">
 
    <div class="town">
-            <input type="radio" name="city" class="radio radioBellvile" value="1"> Bellvile
+            <input type="radio" name="city" class="radio radioBellvile" value="1"> Bellville
             <input type="radio" name="city" class="radio radioCapeTown" value="2"> CapeTown
             <input type="radio" name="city" class="radio radioStellenbosch" value="3"> Stellenbosch
             <input type="radio" name="city" class="radio radioPaarl" value="4">Paarl
