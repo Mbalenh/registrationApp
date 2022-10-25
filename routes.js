@@ -35,7 +35,7 @@ res.redirect("/")
  let city = req.body.city
    const regFilter = await dbFunction.getRegFilter()
   res.render('index',{
-regFilter
+regNumbers:regFilter
   })
 }
 

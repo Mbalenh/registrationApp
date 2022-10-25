@@ -5,7 +5,7 @@ const flash = require('express-flash')
 const session= require('express-session')
 const db = require("./db/db")
 const dbFunction = require("./db/DbFunction")(db)
- 
+ // const routes= require("./routes")(dbFunction)
 const app = express()
 
 
