@@ -1,7 +1,7 @@
  body{
 font-family: Arial,Helvetica, sans-serif;
  box-sizing: border-box;
-
+;
 
  }
 p{
@@ -91,7 +91,7 @@ display: flex;
     align-items: center;
     text-align: center;
     justify-content: center;
-    background: url(pexels-shivam-maurya-7051330.jpg);
+    background-color: #DBF9FC;
    max-width: 100%;
   margin: auto;
   margin-left: 350px;
@@ -99,7 +99,7 @@ display: flex;
   margin-top: 50px;
   border-radius: 10px;
 
-
+S
  }
  .clear{
     margin-left: 5px;
