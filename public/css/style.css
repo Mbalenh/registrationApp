@@ -125,3 +125,20 @@ border-radius: 0.25em;
 cursor: pointer;
 background-color: lightpink;
  }
+
+ h3{
+font-size: 15px;
+text-align: center;
+margin-top: 10px;
+color: pink;
+ }
+
+.error {
+  color: crimson;
+  font-weight: bold;
+}
+.display{
+   color: green;
+  font-weight: bold;
+
+}

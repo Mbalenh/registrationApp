@@ -21,14 +21,14 @@
         <p>Registration</p>
         <div class="registrationNu">
             <input class="name" type="text" name="regnumbers" placeholder=" please enter registration number">
-         
+         <h3> reg eg. CA 123 453 ,CK 123455 CJ 123-234 & CY 123-457<h3>
         </div>
         <div class="regAdd">
             <button class="button-primary RegnuAdd" type="submit" name="button">Add</button>       
         </div>
 
         <div>
-             <p><span class="display">{{message}} </span></p>
+             <p><span class="display">{{message.display}} </span></p>
         <p><span class="error">{{messages.info}}</span></p>
 
     </div>
@@ -73,7 +73,7 @@
     </div>
 </div>
 
-
+<script src="timeout.js"></script>
 
 </body>
 </html>
