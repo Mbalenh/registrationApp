@@ -32,10 +32,10 @@ res.redirect("/")
 
     const getfilter = async (req,res)=>{
 
- let city = req.body.city
-   const regFilter = await dbFunction.getRegFilter()
-  res.render('index',{
-regNumbers:regFilter
+      let city = req.body.city
+      const regFilter = await dbFunction.getRegFilter()
+       res.render('index',{
+            regNumbers:regFilter
   })
 }
 
