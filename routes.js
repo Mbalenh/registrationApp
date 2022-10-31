@@ -14,7 +14,7 @@ const insertRegistrations= async (req,res)=>{
 if(!/^[A-Z]{2}\s[0-9]{3}(\s|\-)?[0-9]{3}$/.test(reg)){
 req.flash("info","Invalid registration number")  
 }else if(reg){
-  await dbFunction.insertRegistration(reg.toUpperCase())
+  await dbFunction.insertRegistration(reg.toUpperCase().reg.slice(1).toLowerCase())
   req.flash("success","registration number added")
 }else{
 req.flash("info","Please enter registration number")
