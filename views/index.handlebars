@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>RegistrationApp</title>
       <link rel="stylesheet" href="/css/style.css">
 
 </head>
@@ -28,8 +28,9 @@
         </div>
 
         <div>
-             <p><span class="display">{{message.display}} </span></p>
+             <!-- <p><span class="display">{{messages}} </span></p> -->
         <p><span class="error">{{messages.info}}</span></p>
+        <p><span class="success">{{messages.success}}</span></p>
 
     </div>
     </form>
@@ -47,15 +48,6 @@
                 <button class="button-primary clear" type="submit" name="button">clear</button>
             </form></div>
               <div>
-        
-   <!--  <div class="msg">
-        <ul class="msg">
-        {{#each regNumbers}}
-        <li class="msg">{{reg_number}}</li>
-        {{/each}}
-        </ul>
-
-    </div> -->
     <div>
         <h1>Please select any town below</h1>
         <form action="/filter" class="reg" method="POST">

@@ -1,4 +1,5 @@
 const routes=(dbFunction) =>{
+
 	const getIndex= async(req,res)=>{
   const regNumbers=await dbFunction.getRegNum()
   res.render('index',{
@@ -10,12 +11,11 @@ const insertRegistrations= async (req,res)=>{
 
    let reg= req.body.regnumbers
 
-console.log(reg)
 if(!/^[A-Z]{2}\s[0-9]{3}(\s|\-)?[0-9]{3}$/.test(reg)){
-req.flash("info","Invalid registration number")
+req.flash("info","Invalid registration number")  
 }else if(reg){
   await dbFunction.insertRegistration(reg.toUpperCase())
-  req.flash("info","registration number added")
+  req.flash("success","registration number added")
 }else{
 req.flash("info","Please enter registration number")
 
@@ -33,7 +33,7 @@ res.redirect("/")
     const getfilter = async (req,res)=>{
 
       let city = req.body.city
-      const regFilter = await dbFunction.getRegFilter()
+      const regFilter = await dbFunction.getRegFilter(city)
        res.render('index',{
             regNumbers:regFilter
   })

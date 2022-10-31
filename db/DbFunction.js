@@ -1,5 +1,5 @@
-    
-     const DbFunction = (db) =>{
+const DbFunction = (db) =>{
+   
 	const insertRegistration= async(reg) =>{
       let town = await db.oneOrNone('select * from Towns where town_name= $1',[reg.slice(0,2)])
 

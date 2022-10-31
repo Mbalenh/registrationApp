@@ -5,7 +5,7 @@ font-family: Arial,Helvetica, sans-serif;
 
  }
 p{
-font-size: 10px;
+font-size: 15px;
 text-align: center;
 }
 
@@ -91,7 +91,7 @@ display: flex;
     align-items: center;
     text-align: center;
     justify-content: center;
-    background-color: #DBF9FC;
+    background-color:#008B8B;
    max-width: 100%;
   margin: auto;
   margin-left: 350px;
@@ -133,12 +133,12 @@ margin-top: 10px;
 color: pink;
  }
 
-.error {
-  color: crimson;
+.error {   
+  color: darkred;
   font-weight: bold;
 }
-.display{
-   color: green;
+.success{
+   color: #E0FFFF;
   font-weight: bold;
 
 }

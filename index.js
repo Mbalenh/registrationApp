@@ -5,7 +5,7 @@ const flash = require('express-flash')
 const session= require('express-session')
 const db = require("./db/db")
 const dbFunction = require("./db/DbFunction")(db)
- // const routes= require("./routes")(dbFunction)
+ const routes= require("./routes")(dbFunction)
 const app = express()
 
 
@@ -26,49 +26,10 @@ app.use(session({
 
 app.use(flash());
 
-
-app.get('/', async function(req,res){
-  const regNumbers=await dbFunction.getRegNum()
-  console.log(regNumbers)
-  res.render('index',{
-regNumbers
-  })
-
-
-})
-app.post('/reg_numbers', async function(req,res){
-let reg= req.body.regnumbers
-
-console.log(reg)
-if(!/^[A-Z]{2}\s[0-9]{3}(\s|\-)?[0-9]{3}$/.test(reg)){
-req.flash("info","Invalid registration number")
-}else if(reg){
-  await dbFunction.insertRegistration(reg.toUpperCase())
-  req.flash("info","registration number added")
-}else if(!reg){
-req.flash("info","Please enter registration number")
-
-}
-res.redirect("/")
-
-})
-
-app.post('/filter' ,async function(req,res) {
-  let city = req.body.city
-  console.log(city)
-   const regFilter = await dbFunction.getRegFilter(city)
-  res.render('index',{
-regNumbers:regFilter
-
-  })
-
-})
-app.post('/clear' ,async function(req,res) {
-
-  await dbFunction.clearTownReg()
-  res.redirect('/');
-})
-// app.get('/',routes)
+app.get('/',routes.getIndex)
+app.post('/reg_numbers',routes.insertRegistrations)
+app.post('/filter',routes.getfilter)
+app.post('/clear',routes.clearREGnum)
 
 
 const PORT = process.env.PORT || 3011;
