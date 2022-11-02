@@ -42,10 +42,10 @@ it('should be able to add all registration numbers', async function(){
  
         const dbFunction = DbFunction(db)
 
-        await dbFunction.insertRegistration('CK 123 656')
+        await dbFunction.insertRegistration('CY 123 656')
         await dbFunction.insertRegistration('CY 123567')
         const regNumbers = await dbFunction.getRegNum()
-        assert.deepEqual([ { reg_number: 'CK 123 656' }, { reg_number: 'CY 123567' } ], regNumbers)
+        assert.deepEqual([ { reg_number: 'CY 123 656' }, { reg_number: 'CY 123567' } ], regNumbers)
 
 });
 
@@ -84,7 +84,6 @@ const dbFunction = DbFunction(db)
     const regNumbers = await dbFunction.getRegFilter(2)
     assert.deepEqual([ {reg_number: 'CA 123 656'}, {reg_number: 'CA 123567'} ], regNumbers)
 });
-
 
 after(function(){
  db.$pool.end()
