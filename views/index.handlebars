@@ -37,8 +37,11 @@
     <div class="msg">
         <ul class="msg">
         {{#each regNumbers}}
-        <li class="msg">{{reg_number}}</li>
+        <li class="msg reg_number">{{reg_number}}</li>
         {{/each}}
+        {{#unless regNumbers}}
+        <p>No registration number has been added</p>
+        {{/unless}}
         </ul>
 
     </div>
@@ -65,7 +68,7 @@
     </div>
 </div>
 
-<script src="timeout.js"></script>
+
 
 </body>
 </html>
