@@ -5,68 +5,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RegistrationApp</title>
-      <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 
 </head>
 <body>
 
-<div class="registration">
-    <div>
-         <h1>Registration Number WebApp</h1>
-         <p>Kindly add in the registration Numbers</p>
+    <div class="registration">
+        <div>
+           <h1>Registration Number WebApp</h1>
+           <p>Kindly add in the registration Numbers</p>
 
-    </div>
-    
-    <form action="/reg_numbers" class="reg" method="POST">
+       </div>
+       
+       <form action="/reg_numbers" class="reg" method="POST">
         <p>Registration</p>
         <div class="registrationNu">
             <input class="name" type="text" name="regnumbers" placeholder=" please enter registration number">
-         <h3> reg eg. CA 123 453 ,CK 123455 CJ 123-234 & CY 123-457<h3>
-        </div>
-        <div class="regAdd">
-            <button class="button-primary RegnuAdd" type="submit" name="button">Add</button>       
-        </div>
+            <h3> reg eg. CA 123 453 ,CK 123455 CJ 123-234 & CY 123-457<h3>
+            </div>
+            <div class="regAdd">
+                <button class="button-primary RegnuAdd" type="submit" name="button">Add</button>       
+            </div>
 
-        <div>
-             <!-- <p><span class="display">{{messages}} </span></p> -->
-        <p><span class="error">{{messages.info}}</span></p>
-        <p><span class="success">{{messages.success}}</span></p>
+            <div>
+               <!-- <p><span class="display">{{messages}} </span></p> -->
+               <p><span class="error">{{messages.info}}</span></p>
+               <p><span class="success">{{messages.success}}</span></p>
 
-    </div>
-    </form>
-    <div class="msg">
+           </div>
+       </form>
+       <div class="msg">
         <ul class="msg">
-        {{#each regNumbers}}
-        <li class="msg reg_number">{{reg_number}}</li>
-        {{/each}}
-        {{#unless regNumbers}}
-        <p>No registration number has been added</p>
-        {{/unless}}
+            {{#each regNumbers}}
+            <li class="msg reg_number">{{reg_number}}</li>
+            {{/each}}
+            {{#unless regNumbers}}
+            <p>No registration number has been added</p>
+            {{/unless}}
         </ul>
 
     </div>
 
-      <div class='clear'>
+    <div class='clear'>
         <form action="/clear" class="regclear" method="POST">
-                <button class="button-primary clear" type="submit" name="button">clear</button>
-            </form></div>
-              <div>
-    <div>
-        <h1>Please select any town below</h1>
-        <form action="/filter" class="reg" method="POST">
+            <button class="button-primary clear" type="submit" name="button">clear</button>
+        </form></div>
+        <div>
+            <div>
+                <h1>Please select any town below</h1>
+                <form action="/filter" class="reg" method="POST">
 
-   <div class="town">
-            <input type="radio" name="city" class="radio radioBellvile" value="1"> Bellville
-            <input type="radio" name="city" class="radio radioCapeTown" value="2"> CapeTown
-            <input type="radio" name="city" class="radio radioStellenbosch" value="3"> Stellenbosch
-            <input type="radio" name="city" class="radio radioPaarl" value="4">Paarl
+                 <div class="town">
+                    <input type="radio" name="city" class="radio radioBellvile" value="1"> Bellville
+                    <input type="radio" name="city" class="radio radioCapeTown" value="2"> CapeTown
+                    <input type="radio" name="city" class="radio radioStellenbosch" value="3"> Stellenbosch
+                    <input type="radio" name="city" class="radio radioPaarl" value="4">Paarl
+                </div>
+                <div class="buttonReg">
+                    <button class="button-primary RegnuAdd" type="submit" name="button">Show</button>
+                </div>
+            </form>
         </div>
-        <div class="buttonReg">
-            <button class="button-primary RegnuAdd" type="submit" name="button">Show</button>
-        </div>
-        </form>
     </div>
-</div>
 
 
 
