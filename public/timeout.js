@@ -6,7 +6,7 @@ if(errorMessageElem.innerHTML !== '' || successMessageElem.innerHTML !== ''){
 setTimeout(function(){
 		errorMessageElem.innerHTML=""
 		successMessageElem.innerHTML=""
-},1000);
+},3000);
 
 }
 });

@@ -85,8 +85,7 @@ const dbFunction = DbFunction(db)
     assert.deepEqual([ {reg_number: 'CA 123 656'}, {reg_number: 'CA 123567'} ], regNumbers)
 });
 
-after(function(){
+ after(function(){
  db.$pool.end()
-
 });
 });
