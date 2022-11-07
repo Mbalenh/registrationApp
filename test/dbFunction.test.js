@@ -53,9 +53,9 @@ describe('The registration numbers app', function(){
 
 
      const dbFunction = DbFunction(db)
-     await dbFunction.insertRegistration('CK 123 656')
 
      await dbFunction.insertRegistration('CY 123567')
+     await dbFunction.insertRegistration('CK 123 656')
 
      const regNumbers = await dbFunction.getRegFilter(1)
      assert.deepEqual([ {reg_number: 'CY 123567'} ], regNumbers)
@@ -66,22 +66,23 @@ describe('The registration numbers app', function(){
     it('should be able to check if the registration is from Paarl', async function(){
 
      const dbFunction = DbFunction(db)
-
-     await dbFunction.insertRegistration('CK 123 656')
      await dbFunction.insertRegistration('CK 123567')
+     await dbFunction.insertRegistration('CK 123 656')
+     
 
      const regNumbers = await dbFunction.getRegFilter(4)
 
-     assert.deepEqual([ {reg_number: 'CK 123 656'}, {reg_number: 'CK 123567'} ], regNumbers)
+     assert.deepEqual([ {reg_number: 'CK 123567'}, {reg_number: 'CK 123 656'} ], regNumbers)
  });
 
     it('should be able to check if the registration is from Cape town', async function(){
         const dbFunction = DbFunction(db)
 
-        await dbFunction.insertRegistration('CA 123 656')
         await dbFunction.insertRegistration('CA 123567')
+        await dbFunction.insertRegistration('CA 123 656')
+       
         const regNumbers = await dbFunction.getRegFilter(2)
-        assert.deepEqual([ {reg_number: 'CA 123 656'}, {reg_number: 'CA 123567'} ], regNumbers)
+        assert.deepEqual([ {reg_number: 'CA 123567'}, {reg_number: 'CA 123 656'} ], regNumbers)
     });
 
     after(function(){
