@@ -5,29 +5,34 @@ const DbFunction = (db) =>{
 
       await db.none('insert into registrationNumber (reg_number, town_id) values($1,$2);',[reg,town.id])
    }
+   const checkDuplicate = async(reg) =>{
+      return await db.oneOrNone('select count(*) from registrationNumber where reg_number=$1',[reg])
+
+}
    const getTownReg= async()=>{
     return await db.manyOrNone('SELECT * FROM Towns ')
  }
  const getRegNum= async()=>{
-  return await db.manyOrNone('SELECT DISTINCT reg_number FROM  registrationNumber')
+  return await db.manyOrNone('SELECT  reg_number FROM  registrationNumber')
   
 }  
 
 
-const clearTownReg = async () => {
+const clearTownReg = async () => {   
  await db.none('Delete FROM registrationNumber')
 }
 
 const getRegFilter= async(value)=>{
- return await db.manyOrNone('select DISTINCT reg_number from registrationNumber where town_id= $1',[value])
+ return await db.manyOrNone('select  reg_number from registrationNumber where town_id= $1',[value])
 
 }
-return{
+ return{
    insertRegistration,
    getTownReg,
    getRegNum,
    clearTownReg,
-   getRegFilter
+   getRegFilter,
+   checkDuplicate
 }
 }
 module.exports = DbFunction
