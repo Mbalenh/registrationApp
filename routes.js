@@ -11,7 +11,7 @@ const insertRegistrations= async (req,res)=>{
 
    let reg= req.body.regnumbers
    const check= await dbFunction.checkDuplicate(reg.toUpperCase())
-   console.log(check)
+   
 if(!reg){
 
 req.flash("info","Please enter registration number")

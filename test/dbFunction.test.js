@@ -37,6 +37,11 @@ describe('The registration numbers app', function(){
 
  });
 
+
+
+
+    
+
     it('should be able to add all registration numbers', async function(){
 
         const dbFunction = DbFunction(db)
