@@ -37,11 +37,6 @@ describe('The registration numbers app', function(){
 
  });
 
-
-
-
-    
-
     it('should be able to add all registration numbers', async function(){
 
         const dbFunction = DbFunction(db)
@@ -89,6 +84,20 @@ describe('The registration numbers app', function(){
         const regNumbers = await dbFunction.getRegFilter(2)
         assert.deepEqual([ {reg_number: 'CA 123567'}, {reg_number: 'CA 123 656'} ], regNumbers)
     });
+ 
+
+ it('should be able not to add all registration numbers that are duplicate', async function(){
+
+        const dbFunction = DbFunction(db)
+
+        await dbFunction.insertRegistration('CY 123567')
+        await dbFunction.insertRegistration('CY 123567')
+        const checkduplicate = await dbFunction.checkDuplicate('CY 123567')
+        assert.deepEqual([  { reg_number: 'CY 123567' } ], checkduplicate)
+
+    });
+
+
 
     after(function(){
      db.$pool.end()
