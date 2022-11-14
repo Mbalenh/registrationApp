@@ -93,7 +93,7 @@ describe('The registration numbers app', function(){
         await dbFunction.insertRegistration('CY 123567')
         await dbFunction.insertRegistration('CY 123567')
         const checkduplicate = await dbFunction.checkDuplicate('CY 123567')
-        assert.equal('2', checkduplicate.count)
+        assert.equal(2, checkduplicate.count)
 
     });
 
@@ -104,7 +104,7 @@ describe('The registration numbers app', function(){
         await dbFunction.insertRegistration('CY 123-567')
         await dbFunction.insertRegistration('CY 123-567')
         const checkduplicate = await dbFunction.checkDuplicate('CY 123-567')
-        assert.equal('2', checkduplicate.count)
+        assert.equal(2, checkduplicate.count)
 
     });
 
