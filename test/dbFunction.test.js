@@ -93,7 +93,7 @@ describe('The registration numbers app', function(){
         await dbFunction.insertRegistration('CY 123567')
         await dbFunction.insertRegistration('CY 123567')
         const checkduplicate = await dbFunction.checkDuplicate('CY 123567')
-        assert.deepEqual([  { reg_number: 'CY 123567' } ], checkduplicate)
+        assert.equal('2', checkduplicate.count)
 
     });
 
