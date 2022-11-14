@@ -39,12 +39,12 @@ jobs:
     
     steps:
     - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Use Node.js 
       env:
         PGPASSWORD: postgres
       uses: actions/setup-node@v3
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: '12.x'
         cache: 'npm'
     - run: npm install -g npm
     - run: npm install
