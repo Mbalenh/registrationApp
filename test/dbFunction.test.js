@@ -96,10 +96,7 @@ describe('The registration numbers app', function(){
         assert.equal('2', checkduplicate.count)
 
     });
-
-
-
-    after(function(){
+  after(function(){
      db.$pool.end()
  });
 });
