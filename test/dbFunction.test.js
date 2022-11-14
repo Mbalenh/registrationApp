@@ -96,6 +96,22 @@ describe('The registration numbers app', function(){
         assert.equal('2', checkduplicate.count)
 
     });
+
+ it('should be able to check  duplicate', async function(){
+
+        const dbFunction = DbFunction(db)
+
+        await dbFunction.insertRegistration('CY 123-567')
+        await dbFunction.insertRegistration('CY 123-567')
+        const checkduplicate = await dbFunction.checkDuplicate('CY 123-567')
+        assert.equal('2', checkduplicate.count)
+
+    });
+
+
+
+
+
   after(function(){
      db.$pool.end()
  });
